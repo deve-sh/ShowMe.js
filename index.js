@@ -35,3 +35,20 @@ class ShowMe {
 }
 
 export default ShowMe;
+
+/**
+Sample Steps Array:
+[
+    {
+        title: "Text or HTML",
+        description: "Text or HTML",
+        element: document.querySelector(".step-1"),
+    },
+    {
+        title: "Text or HTML",
+        description: "Text or HTML",
+        element: document.querySelector(".step-2"),
+    }
+    ...
+]
+*/
