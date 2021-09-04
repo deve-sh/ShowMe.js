@@ -26,6 +26,29 @@ const helpers = {
 		if (!document.getElementById("showme-transparentoverlay"))
 			document.getElementById("showme-transparentoverlay").remove();
 	},
+
+	createDescriptorElement: (step = { title: "", description: "" }) => {
+		let elementHTML = `
+			<div id="showme-description" style="
+				height: fit-content;
+				padding: 1rem;
+				background: #f1f1f1;
+				border-radius: 0.5rem;
+				border: 0.075rem solid #efefef;
+				z-index: 1000;
+			">
+				<div class="showme-description-header">${step.title}</div>
+				<div class="showme-description-content">${step.description}</div>
+			</div>
+		`;
+		if (!document.getElementById("showme-description"))
+			document.body.innerHTML += elementHTML;
+		else document.getElementById("showme-description").outerHTML = elementHTML; // Replace existing element.
+	},
+	removeDescriptorElement: () => {
+		if (!document.getElementById("showme-description"))
+			document.getElementById("showme-description").remove();
+	},
 };
 
 class ShowMe {
